@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Primary Colors */
+    --color-primary: #4F46E5; /* indigo-600 */
+    --color-primary-50: #EEF2FF; /* indigo-50 */
+    --color-primary-100: #E0E7FF; /* indigo-100 */
+    --color-primary-500: #6366F1; /* indigo-500 */
+    --color-primary-600: #4F46E5; /* indigo-600 */
+    --color-primary-700: #4338CA; /* indigo-700 */
+    --color-primary-foreground: #FFFFFF; /* white */
+
+    /* Secondary Colors */
+    --color-secondary: #6B7280; /* gray-500 */
+    --color-secondary-50: #F9FAFB; /* gray-50 */
+    --color-secondary-100: #F3F4F6; /* gray-100 */
+    --color-secondary-200: #E5E7EB; /* gray-200 */
+    --color-secondary-500: #6B7280; /* gray-500 */
+    --color-secondary-600: #4B5563; /* gray-600 */
+    --color-secondary-foreground: #FFFFFF; /* white */
+
+    /* Accent Colors */
+    --color-accent: #10B981; /* emerald-500 */
+    --color-accent-50: #ECFDF5; /* emerald-50 */
+    --color-accent-100: #D1FAE5; /* emerald-100 */
+    --color-accent-500: #10B981; /* emerald-500 */
+    --color-accent-600: #059669; /* emerald-600 */
+    --color-accent-foreground: #FFFFFF; /* white */
+
+    /* Background Colors */
+    --color-background: #FAFAF9; /* stone-50 */
+    --color-surface: #FFFFFF; /* white */
+    --color-surface-50: #FAFAF9; /* stone-50 */
+    --color-surface-100: #F5F5F4; /* stone-100 */
+
+    /* Text Colors */
+    --color-text-primary: #111827; /* gray-900 */
+    --color-text-secondary: #6B7280; /* gray-500 */
+    --color-text-muted: #9CA3AF; /* gray-400 */
+
+    /* Status Colors */
+    --color-success: #059669; /* emerald-600 */
+    --color-success-50: #ECFDF5; /* emerald-50 */
+    --color-success-100: #D1FAE5; /* emerald-100 */
+    --color-success-500: #10B981; /* emerald-500 */
+    --color-success-600: #059669; /* emerald-600 */
+    --color-success-foreground: #FFFFFF; /* white */
+
+    --color-warning: #D97706; /* amber-600 */
+    --color-warning-50: #FFFBEB; /* amber-50 */
+    --color-warning-100: #FEF3C7; /* amber-100 */
+    --color-warning-500: #F59E0B; /* amber-500 */
+    --color-warning-600: #D97706; /* amber-600 */
+    --color-warning-foreground: #FFFFFF; /* white */
+
+    --color-error: #DC2626; /* red-600 */
+    --color-error-50: #FEF2F2; /* red-50 */
+    --color-error-100: #FEE2E2; /* red-100 */
+    --color-error-500: #EF4444; /* red-500 */
+    --color-error-600: #DC2626; /* red-600 */
+    --color-error-foreground: #FFFFFF; /* white */
+
+    /* Border Colors */
+    --color-border: #E5E7EB; /* gray-200 */
+    --color-border-light: #F3F4F6; /* gray-100 */
+
+    /* Shadow Colors */
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-base: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-text-primary font-body;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+}
+
+@layer components {
+  .game-cell-hover {
+    @apply transition-transform duration-150 ease-out hover:scale-105;
+  }
+
+  .game-state-transition {
+    @apply transition-all duration-200 ease-in-out;
+  }
+
+  .win-highlight {
+    @apply transition-colors duration-300 ease-in-out;
+  }
+
+  .breathing-space-sm {
+    @apply p-4; /* 16px */
+  }
+
+  .breathing-space-md {
+    @apply p-6; /* 24px */
+  }
+
+  .breathing-space-lg {
+    @apply p-8; /* 32px */
+  }
+
+  .soft-shadow {
+    box-shadow: var(--shadow-base);
+  }
+
+  .soft-shadow-elevated {
+    box-shadow: var(--shadow-md);
+  }
+
+  .gradient-accent {
+    background: linear-gradient(45deg, var(--color-primary), color-mix(in srgb, var(--color-primary) 95%, white 5%));
+  }
+}
